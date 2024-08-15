@@ -24,7 +24,7 @@ const winPatterns = [
 
   boxes.forEach((box) => {
     box.addEventListener("click", () => {
-        // console.log("hell0")
+      
       if (turnO) {
         //playerO
         box.innerText = "O";
@@ -64,22 +64,14 @@ const showwinner = (winner) => {
 
 
 const checkwinner = () => {
-  for(let i of winPatterns){   //helps in checking winning patterns
-    // console.log(i[0], i[1], i[2])
-    // console.log(boxes[i[0]], boxes[i[1]], boxes[i[2]])
-    // console.log(i[[0]], i[[1]], i[[2]])
-    // console.log(
-    //   boxes[i[0]].innerText, 
-    //   boxes[i[1]].innerText,
-    //   boxes[i[2]].innerText
-    // )
+  for(let i of winPatterns){  
     let pos1val = boxes[i[0]].innerText;
     let pos2val = boxes[i[1]].innerText;
     let pos3val = boxes[i[2]].innerText;
    
     if(pos1val != "" && pos2val != "" && pos3val != ""){
       if (pos1val == pos2val  && pos2val == pos1val){
-        // console.log("winner!", pos1val)
+        
       showwinner(pos1val);
       return true;
       }
